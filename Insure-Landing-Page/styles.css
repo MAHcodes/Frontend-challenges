@@ -1,0 +1,427 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Karla:wght@400;700&display=swap');
+
+:root {
+    --dark-violet: hsl(256, 26%, 20%);
+    --grayish-blue: hsl(216, 30%, 68%);
+    --very-dark-violet: hsl(270, 9%, 17%);
+    --dark-gray-violet: hsl(273, 4%, 51%);
+    --very-light-gray: hsl(0, 0%, 98%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: 'Karla', sans-serif;
+    text-align: center;
+}
+
+p {
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'DM Serif Display', serif;
+}
+
+hr {
+    max-width: 10rem;
+    margin: 0 auto;
+    color: var(--very-light-gray);
+}
+
+.btn {
+    display: inline-block;
+    padding: .65em 1.75em;
+    margin-top: 1em;
+    border: 1px solid white;
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: .9em;
+    transition: background-color 100ms,  color 100ms;
+}
+
+.btn:hover {
+    background-color: var(--very-light-gray);
+    color: var(--dark-violet);
+
+}
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    padding: 0 2rem;
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+img {
+    width: 100%;
+}
+
+header .container {
+    display: flex;
+    padding: 1.5rem 2rem;
+    flex-direction: column;
+}
+
+header .wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.ham {
+    cursor: pointer;
+}
+
+nav {
+    display: none;
+    padding-top: 1rem;
+}
+
+@keyframes displayA {
+    to {
+        transform: translate(0);
+        opacity: 1;
+    }
+}
+
+nav a:nth-child(1) {
+    animation: displayA 1s forwards;
+}
+
+nav a:nth-child(2) {
+    animation: displayA 1s 100ms forwards;
+}
+nav a:nth-child(3) {
+    animation: displayA 1s 200ms forwards;
+}
+nav a:nth-child(4) {
+    animation: displayA 1s 300ms forwards;
+}
+
+nav a {
+    display: block;
+    color: var(--dark-violet);
+    padding-block: .25em;
+    transform: translateY(-15px);
+    opacity: 0;
+}
+
+nav a:hover:not(.btn) {
+    text-decoration: underline;
+}
+
+nav .btn {
+    color: var(--dark-violet);
+    border-color: var(--dark-violet);
+}
+
+nav .btn:hover {
+    color: var(--very-light-gray);
+    border-color: var(--very-light-gray);
+    background-color: var(--dark-violet);
+}
+
+#navbar {
+    display: none;
+}
+
+#navbar:checked + nav {
+    display: block !important;
+}
+
+.hero {
+    color: var(--very-light-gray);
+    background-color: var(--dark-violet);
+    position: relative;
+    z-index: 5;
+}
+
+.hero .container {
+    padding: 0;
+    position: relative;
+    z-index: -10;
+}
+
+.hero .content-wrapper {
+    position: relative;
+    z-index: -1;
+    font-size: 1.25rem;
+    padding: 5em 2em;
+}
+
+.hero .content-wrapper::before {
+    content: url("./insure-landing-page-master/images/bg-pattern-intro-left-mobile.svg");
+    top: 0;
+    left: 0;
+}
+
+.hero::before,
+.hero::after,
+.hero .content-wrapper::before {
+    position: absolute;
+    z-index: -1;
+}
+
+.hero::before {
+    top: 0;
+    left: 0;
+}
+
+.hero::after {
+    content: url("./insure-landing-page-master/images/bg-pattern-intro-right-mobile.svg");
+    bottom: 0;
+    right: 0;
+    transform: translateY(50%);
+}
+
+.hero .content-wrapper hr {
+    margin-right: auto; 
+    margin-left: 0; 
+    color: var(--dark-gray-violet);
+    margin-block: 1rem;
+    display: none;
+}
+
+.hero .content-wrapper h1 {
+    font-size: 2.65em;
+}
+
+.hero .content-wrapper p {
+    margin-block: 1em;
+    color: var(--very-light-gray);
+    opacity: .8;
+}
+
+.different .dif-title {
+    font-size: 1.75rem;
+}
+
+.different {
+    padding-top: 10rem;
+    padding-bottom: 7rem;
+}
+
+.different .dif-title h2 {
+    margin-block: 1em;
+}
+
+.card {
+    padding-block: 2em;
+}
+
+.card .img {
+    width: 75px;
+    height: 75px;
+    margin: 0 auto 3rem auto;
+}
+
+.card h3  {
+    font-size: 1.75rem;
+    margin-bottom: .5em;
+}
+
+.find {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--dark-violet);
+    color: var(--very-light-gray);
+    padding: 4em 2em;
+    position: relative;
+    z-index: 1;
+    margin-bottom: 8rem;
+    overflow: hidden;
+    flex-direction: column;
+}
+
+.find::before {
+    content: url(./insure-landing-page-master/images/bg-pattern-how-we-work-mobile.svg);
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: -1;
+}
+
+.find h2 {
+    font-size: 2rem;
+}
+
+footer {
+    padding-top: 5rem;
+    background-color: var(--very-light-gray);
+    position: relative;
+    z-index: 2;
+}
+
+footer::before {
+    content: url("./insure-landing-page-master/images/bg-pattern-footer-mobile.svg");
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+footer .logo {
+    width: 120px;
+    margin-block: .5em;
+    margin-inline: auto;
+}
+
+footer .social a {
+    width: 25px;
+    display: inline-block;
+    margin: 1em .4em;
+}
+
+footer .top {
+    border-bottom: 1px solid var(--grayish-blue);
+    padding-bottom: 1rem;
+}
+
+footer .top a:hover {
+    filter: brightness(0);
+}
+
+footer .bottom {
+    padding-block: 2rem;
+}
+
+footer .bottom ul {
+    list-style-type: none;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+footer .bottom li {
+    padding-block: .25em;
+}
+
+footer .bottom .title {
+    color: var(--grayish-blue);
+    margin-block: 1em;
+}
+
+footer .bottom a {
+    color: var(--dark-violet);
+}
+
+footer .bottom a:hover {
+    text-decoration: underline;
+}
+
+@media only screen and (min-width: 675px) {
+    header .container {
+        justify-content: space-between;
+        flex-direction: row;
+        align-items: center;
+    }
+    .ham {
+        display: none;
+    }
+    nav {
+        display: flex;
+        align-items: center;
+    }
+    header nav {
+        padding-top: 0;
+    }
+    header nav a {
+        display: inline-block;
+        animation: none !important;
+        opacity: 1;
+        transform: translateX(0);
+    }
+    header nav a + a {
+        margin-left: 2em;
+    }
+    header nav .btn {
+        margin-block: 0;
+    }
+    .hero::before {
+        content: url("./insure-landing-page-master/images/bg-pattern-intro-left-desktop.svg");
+        bottom: 0;
+        transform: translateY(50%);
+        z-index: -30;
+    }
+    .hero::after {
+        content: url("./insure-landing-page-master/images/bg-pattern-intro-right-desktop.svg");
+        top: 0;
+        right: 0;
+        transform: translateY(0);
+        z-index: -1;
+    }
+    .hero .content-wrapper {
+        text-align: left;
+        padding-inline: 2rem !important;
+        z-index: 34;
+    }
+    .hero .content-wrapper::before {
+        display: none;
+    }
+    .hero > div {
+        display: flex;
+    }
+    .hero .content-wrapper {
+        padding: 5em 0;
+        width: 50%;
+    }
+    .hero .img {
+        position: absolute;
+        bottom: -20%;
+        right: 2rem;
+        width: 35%;
+    }
+    .hero .content-wrapper hr {
+        display: block;
+    }
+    hr,
+    .flex .img {
+        margin-left: 0;
+        margin-right: auto;
+    }
+    .different .dif-title {
+        text-align: left;
+        font-size: 3rem;
+    }
+    .flex {
+        display: flex;
+        gap: 4em;
+    }
+    .card {
+        text-align: left;
+    }
+    .find {
+        flex-direction: row;
+    }
+    .find .btn {
+        margin: 0;
+    }
+    footer::before {
+        content: url("./insure-landing-page-master/images/bg-pattern-footer-desktop.svg");
+    }
+    footer .top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    footer .logo {
+        margin-inline: 0;
+    }
+    footer .bottom {
+        display: flex;
+        align-items: flex-start;
+        text-align: left;
+    }
+    footer .bottom ul + ul {
+        margin-left: 15%;
+    }
+}
