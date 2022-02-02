@@ -1,0 +1,133 @@
+/***
+    The new CSS reset - version 1.4.7 (last updated 27.1.2022)
+    GitHub page: https://github.com/elad2412/the-new-css-reset
+***/
+
+/*
+    Remove all the styles of the "User-Agent-Stylesheet", except for the 'display' property
+    - The "symbol *" part is to solve Firefox SVG sprite bug
+ */
+*:where(:not(iframe, canvas, img, svg, video):not(svg *, symbol *)) {
+  all: unset;
+  display: revert;
+}
+
+/* Preferred box-sizing value */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Reapply the pointer cursor for anchor tags */
+a,
+button {
+  cursor: revert;
+}
+
+/* Remove list styles (bullets/numbers) */
+ol,
+ul,
+menu {
+  list-style: none;
+}
+
+/* For images to not be able to exceed their container */
+img {
+  max-width: 100%;
+}
+
+/* removes spacing between cells in tables */
+table {
+  border-collapse: collapse;
+}
+
+/* revert the 'white-space' property for textarea elements on Safari */
+textarea {
+  white-space: revert;
+}
+
+/* minimum style to allow to style meter element */
+meter {
+  -webkit-appearance: revert;
+  appearance: revert;
+}
+
+/* fix the feature of 'hidden' attribute.
+   display:revert; revert to element instead of attribute */
+:where([hidden]) {
+  display: none;
+}
+
+/* revert for bug in Chromium browsers
+   - fix for the content editable attribute will work properly. */
+:where([contenteditable]) {
+  -moz-user-modify: read-write;
+  -webkit-user-modify: read-write;
+  overflow-wrap: break-word;
+  -webkit-line-break: after-white-space;
+}
+
+/* apply back the draggable feature - exist only in Chromium and Safari */
+:where([draggable="true"]) {
+  -webkit-user-drag: element;
+}
+
+/*FONTS*/
+@font-face {
+  font-family: Poppins;
+  src: url("./assets/fonts/Poppins/Poppins-Regular.ttf"),
+    url("./assets/fonts/Poppins/Poppins-Light.ttf");
+}
+
+/* VARIABLES */
+:root {
+  --background-color: 255, 255, 255;
+  font-family: Poppins, sans-serif;
+}
+
+.container {
+  max-width: 1650px;
+  padding-inline: 1rem;
+  margin-inline: auto;
+}
+
+/*GLOBAL CSS */
+.flex {
+  display: flex !important;
+  align-items: center;
+}
+
+header {
+  position: fixed;
+  inset: 0 0 auto 0;
+  background-color: rgb(var(--background-color));
+  padding-block: 1rem;
+}
+
+header .container {
+  justify-content: space-between;
+}
+
+header nav ul {
+  gap: 1em;
+}
+
+header nav ul img {
+  width: 1.25rem;
+}
+
+.status_line {
+  padding: 0.5rem;
+  position: fixed;
+}
+
+.status_line__line {
+  width: 0.125rem;
+  height: 25vh;
+  background-color: black;
+}
+
+#Home {
+  max-height: 100vh;
+}
