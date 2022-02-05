@@ -95,6 +95,7 @@ meter {
   --border-radius: 0.375rem;
 
   font-family: Poppins, sans-serif;
+  font-size: clamp(0.5rem, 2.5vmin, 1rem);
   scroll-behavior: smooth;
 }
 
@@ -182,9 +183,12 @@ header nav ul a:hover {
   opacity: 1;
 }
 
-header nav ul a + a,
 .brand h2 {
-  margin-inline-start: 1em;
+  margin-inline-start: calc(2rem - 20px);
+}
+
+header nav ul a + a {
+  margin-inline-start: 1.5em;
 }
 
 header nav ul a:hover {
@@ -203,11 +207,13 @@ header nav ul img {
 #Home {
   min-height: 100vh;
   display: flex;
+  /*flex-direction: column;*/
   align-items: center;
   justify-content: space-between;
   gap: 5rem;
 }
 
+.features__text,
 .content {
   flex-basis: 35%;
 }
@@ -234,8 +240,8 @@ header nav ul img {
 }
 
 .content .cta:hover {
-  transform: translate(-1px, -1px);
-  box-shadow: 3px 4px 0 0 rgb(var(--font-color));
+  transform: translate(-2px, -2px);
+  box-shadow: 4px 5px 0 0 rgb(var(--font-color));
 }
 
 .content .cta:active {
@@ -246,16 +252,20 @@ header nav ul img {
 
 .preview {
   position: relative;
-  flex-basis: 65%;
   user-select: none;
 }
 
-.preview:hover img {
-  transform: scale(1.035);
+.features__media,
+.preview {
+  flex-basis: 65%;
+}
+
+.preview img,
+.features__media img {
+  border-radius: var(--border-radius);
 }
 
 .preview img {
-  border-radius: var(--border-radius);
   transition: transform 200ms ease-in-out;
   transform-origin: right center;
   width: 100%;
@@ -288,7 +298,7 @@ header nav ul img {
 }
 
 #Features {
-  min-height: 100vh;
+  height: 100vh;
 }
 
 .status_line {
@@ -310,4 +320,8 @@ header nav ul img {
 
 .features__content ul li a {
   text-decoration: underline;
+}
+
+.dark__img {
+  height: 0;
 }
