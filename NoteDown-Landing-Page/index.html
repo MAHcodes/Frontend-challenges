@@ -14,44 +14,36 @@
   <body>
     <header>
       <div class="container flex">
-        <div class="brand flex">
-          <img src="./assets/images/logo.svg" alt="NoteDown Logo" />
-          <h2>NoteDown</h2>
+        <div class="brand">
+          <a href="/" class="flex">
+            <img src="./assets/images/logo.svg" alt="NoteDown Logo" />
+            <h2>NoteDown</h2>
+          </a>
         </div>
         <nav>
           <ul class="flex">
-            <li><a href="#Home">Home</a></li>
-            <li><a href="#Features">Features</a></li>
-            <li><a href="#">Licence</a></li>
-            <li>
-              <a href="#" class="flex"
-                ><img src="./assets/images/github.svg" alt="github"
-              /></a>
-            </li>
+            <a href="#Home"><li>Home</li></a>
+            <a href="#Features"><li>Features</li></a>
+            <a href="#"><li>Licence</li></a>
+            <a href="#">
+              <li class="flex">
+                <img src="./assets/images/github.svg" alt="github" />
+              </li>
+            </a>
           </ul>
         </nav>
       </div>
     </header>
-    <main class="container flex">
-      <div class="status_line">
-        <div class="status_line__line">
-          <span class="status_line__home"><a href="#home"></a></span>
-          <span class="status_line__features"><a href="#features"></a></span>
-          <span class="status_line__"><a href="#"></a></span>
-        </div>
-      </div>
+    <main class="container">
       <div>
         <section id="Home">
           <div class="content">
-            <h1>Note Down your ideas as piece of cake!</h1>
+            <h1>Note Down<br />your ideas as<br />piece of cake!</h1>
             <p>
               A web-based note taking app that focus on simplicity and ease of
               use.
             </p>
             <a href="https://mhmdali102.github.io/NoteDown" class="btn cta"
-              >Live Demo</a
-            >
-            <a href="https://github.com/mhmdali102/NoteDown" class="demo"
               >Live Demo</a
             >
           </div>
@@ -139,6 +131,17 @@
               <span></span>
               <span></span>
               <span></span>
+            </div>
+          </div>
+        </section>
+        <section id="Features">
+          <div class="status_line">
+            <div class="status_line__line">
+              <span class="status_line__home"><a href="#home"></a></span>
+              <span class="status_line__features"
+                ><a href="#features"></a
+              ></span>
+              <span class="status_line__"><a href="#"></a></span>
             </div>
           </div>
         </section>
