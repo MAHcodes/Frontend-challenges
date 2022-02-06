@@ -224,6 +224,10 @@ header nav ul img {
   font-size: var(--font-size-1);
 }
 
+.fadein {
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+}
+
 .content p {
   font-size: var(--font-size-3);
   color: rgba(var(--font-color), 0.7);
@@ -253,6 +257,7 @@ header nav ul img {
 .preview {
   position: relative;
   user-select: none;
+  perspective: 200px;
 }
 
 .features__media,
@@ -316,6 +321,7 @@ header nav ul img {
 .features__content ul li {
   color: rgba(var(--font-color), 0.6);
   margin-block: 2em;
+  transform-origin: left center;
 }
 
 .features__content ul li a {
