@@ -13,7 +13,7 @@ tl.from(".fadein", {
   opacity: 0,
   stagger: 0.25,
 })
-  .from(".preview", { x: 40, scale: 0.95, opacity: 0 }, "-=2.5")
+  .from(".preview", { y: 40, scale: 0.95, opacity: 0 }, "-=2.5")
   .from(".delay", { opacity: 0, duration: 2.5 }, "-=1.25");
 
 //const prev = document.querySelector(".preview img");
